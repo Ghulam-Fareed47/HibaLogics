@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font */
+@font-face {
+  font-family: 'poppins';
+  src: url('assets/css/poppins/Poppins-Regular.ttf') format('truetype');
+}
+/* Custom CSS to hide scrollbar while still allowing scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  

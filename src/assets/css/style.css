@@ -1,0 +1,29 @@
+ /* Active class for Tailwind underline styling */
+ .active {
+    color: #2687F0;
+   
+
+}
+ /* Active link styling with underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0); /* Starts hidden */
+      top: 37px;
+      width: 30px;
+      height: 4px;
+      border-radius: 50px;
+      background-color: #2687F0;
+      transition: transform 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    .nav-link.active::after {
+      transform: translateX(-50%) scaleX(1); /* Expands smoothly */
+    }
+    .nav{
+        transition: background-color 0.3s ease-in-out; 
+    }

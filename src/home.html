@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Scroll Loading</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <header class="p-6 text-center text-2xl font-bold">Smooth Scroll Loading Example</header>
+
+  <!-- Sections with smooth loading effect -->
+  <section class="my-10 p-10 bg-white rounded-lg shadow-md opacity-0 transition-opacity duration-1000" data-animate>
+    <h2 class="text-xl font-semibold">Section 1</h2>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+    <p>Content for section 1...</p>
+  </section>
+
+  <section class="my-10 p-10 bg-white rounded-lg shadow-md opacity-0 transition-opacity duration-1000" data-animate>
+    <h2 class="text-xl font-semibold">Section 2</h2>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+    <p>Content for section 2...</p>
+  </section>
+
+  <section class="my-10 p-10 bg-white rounded-lg shadow-md opacity-0 transition-opacity duration-1000" data-animate>
+    <h2 class="text-xl font-semibold">Section 3</h2>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+    <p>Content for section 3...</p>
+  </section>
+
+  <script>
+    // JavaScript to handle the smooth loading effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100'); // Fade-in effect
+          observer.unobserve(entry.target); // Stop observing once loaded
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-animate]').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
