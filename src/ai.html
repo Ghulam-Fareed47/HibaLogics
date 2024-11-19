@@ -3,46 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smooth Navbar Transition</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Initial Navbar Transition */
-    #navbar {
-      transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Form Design</title>
 </head>
-<body class="h-screen">
-  <!-- Navbar -->
-  <header class="sticky top-0 z-20 w-full" id="navbar">
-    <nav class="container mx-auto px-4 py-5">
-      <div class="flex justify-between items-center">
-        <img src="assets/images/logo.svg" alt="Logo" class="w-24">
-        <ul class="flex space-x-4">
-          <li><a href="#" class="text-black">Home</a></li>
-          <li><a href="#" class="text-black">About</a></li>
-          <li><a href="#" class="text-black">Contact</a></li>
-        </ul>
+<body class="bg-gray-900 text-white flex justify-center items-center min-h-screen">
+  <!-- Form Container -->
+  <div class="w-full max-w-xl p-6">
+    <form class="space-y-6">
+      <!-- Name and Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            class="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            class="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+          />
+        </div>
       </div>
-    </nav>
-  </header>
 
-  <!-- Content -->
-  <div class="h-[200vh] bg-gray-100">
-    <h1 class="text-center pt-40 text-4xl">Scroll Down</h1>
+      <!-- Project/Idea -->
+      <div>
+        <label for="project" class="block text-sm font-medium mb-1">Tell us about your project/idea</label>
+        <textarea
+          id="project"
+          rows="3"
+          class="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-blue-500"
+          placeholder="Share your project details"
+        ></textarea>
+      </div>
+
+      <!-- Where Did You Hear -->
+      <div>
+        <label for="source" class="block text-sm font-medium mb-1">Where did you hear about us?</label>
+        <input
+          type="text"
+          id="source"
+          class="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-blue-500"
+          placeholder="Specify source"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="flex items-center space-x-2 bg-white text-black font-medium py-2 px-6 rounded-full hover:bg-gray-200 focus:outline-none"
+      >
+        <span>&#x27A1;</span>
+        <span>Submit</span>
+      </button>
+    </form>
   </div>
-
-  <script>
-    // Listen to the scroll event
-    const navbar = document.getElementById('navbar');
-
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) {  // Change the background color after scrolling 10px
-        navbar.classList.add('bg-white'); // Add Tailwind's white background
-      } else {
-        navbar.classList.remove('bg-white'); // Remove the background color
-      }
-    });
-  </script>
 </body>
 </html>

@@ -6,11 +6,11 @@ module.exports = {
       colors: {
         primary: '#4799F2',
         secondary: '#2687F0',
-        navbg: '#f3f3f3',
-        secondaryred:'#DE1924',
+        secondaryblk:'#2E2E2E',
       },
       fontFamily: {
-      poppins:'poppins',
+      // poppins:'poppins',
+      sanssrf: [ 'sans-serif'],
       },
     
     },
