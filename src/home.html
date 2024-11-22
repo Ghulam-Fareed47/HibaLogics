@@ -2,57 +2,93 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <!-- Meta Charset -->
     <meta charset="UTF-8">
+
+    <!-- Viewport for Responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo-fav/favicon.ico" type="image/x-icon">
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Hibalogics offers expert web development, UI/UX design, and app development services to elevate your online presence.">
+
+    <!-- Keywords (Optional but often helpful) -->
+    <meta name="keywords"
+        content="web development, UI/UX design, app development, professional websites, HibaLogics, online presence">
+
+    <!-- Author -->
+    <meta name="author" content="Hibalogics">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Hibalogics: Elevate Your Online Presence with Expert Web Development Services">
+    <meta property="og:description"
+        content="Hibalogics offers expert web development, UI/UX design, and app development services to elevate your online presence.">
+    <meta property="og:image" content="assets/images/social-share-image.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Page Title -->
+    <title>Hibalogics: Elevate Your Online Presence with Expert Web Development Services</title>
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css"> <!-- Changed to minified version -->
     <link rel="stylesheet" href="assets/aos-master/dist/aos.css">
     <link href="./output.css" rel="stylesheet">
-    <title>Hibalogics: Elevate Your Online Presence with Expert Web Development Services</title>
-    <style>
 
-    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hibalogics",
+        "url": "https://yourwebsite.com",
+        "description": "Hibalogics offers expert web development, UI/UX design, and app development services to elevate your online presence."
+    }
+    </script>
 </head>
 
-
-<body>
-    <main class="font-sanssrf bg-[url('assets/images/home/background.svg')]  bg-repeat ">
+<body class="scroll-py-16">
+    <main class="font-sanssrf bg-[url('assets/images/home/background.svg')] bg-repeat">
         <!-- HEADER -->
-        <header class="sticky top-0 z-20 w-full">
-            <!-- Navbar Section -->
-            <nav class="w-full z-10 nav " id="navbar">
+        <header class="fixed top-0 z-20 w-full" aria-label="Main Navigation">
+            <nav class="w-full z-10 nav" id="navbar">
                 <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-5 flex justify-between items-center"
                     id="nav-content">
                     <!-- Logo Section -->
                     <div>
                         <!-- Default Logo -->
-                        <a href="#">
-                            <img id="logo" src="assets/images/logo-fav/logo.svg" alt="Logo" class="w-36 md:w-44">
+                        <a href="index.html" aria-label="Hibalogics Home">
+                            <img id="logo" src="assets/images/logo-fav/logo.svg" alt="Hibalogics Logo"
+                                class="w-36 md:w-44">
                         </a>
                     </div>
 
                     <!-- Navigation Links Section -->
                     <div class="flex items-center gap-7" id="nav-links">
                         <!-- Portfolio Link -->
-                        <a href="#portfolioo" id="portfolio" onclick="setActive('portfolio')"
-                            class="nav-link relative hover:text-primary duration-500 text-base  hidden lg:block active">
+                        <a href="#portfolioo" id="portfolio-link" onclick="setActive('portfolio-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Portfolio
                         </a>
                         <!-- Services Link -->
-                        <a href="#servicess" id="services" onclick="setActive('services')"
-                            class="nav-link relative hover:text-primary duration-500 text-base   hidden lg:block">
+                        <a href="#servicess" id="services-link" onclick="setActive('services-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Services
                         </a>
                         <!-- Testimonials Link -->
-                        <a href="#testimonialss" id="testimonials" onclick="setActive('testimonials')"
-                            class="nav-link relative hover:text-primary duration-500 text-base  hidden lg:block">
+                        <a href="#testimonialss" id="testimonials-link" onclick="setActive('testimonials-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Testimonials
                         </a>
 
                         <!-- Let's Talk Button -->
-                        <a href="#"
+                        <a href="#contact"
                             class="text-white bg-secondary py-3 px-8 rounded-full text-lg hover:bg-primary duration-500 hidden lg:block">
                             <span class="flex items-center">
                                 <img src="assets/images/home/button-arrow.svg" alt="Button Arrow" class="w-3 mr-3 pt-2">
@@ -61,33 +97,116 @@
                         </a>
 
                         <!-- Mobile Menu Button -->
-                        <button class="ml-4 lg:hidden">
-                            <i class="fal fa-bars text-3xl"></i>
+                        <button id="hamburgerButton"
+                            class="callusdrop group ml-4 lg:hidden inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded transition"
+                            aria-pressed="false" aria-label="Toggle navigation menu" onclick="toggleMenu(this)">
+                            <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect
+                                    class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-500 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                                <rect
+                                    class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
+                                    y="7" width="16" height="2" rx="1"></rect>
+                                <rect
+                                    class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                            </svg>
                         </button>
                     </div>
                 </div>
             </nav>
-        </header>
 
-        <!-- HERO -->
-        <!-- section1 -->
+            <!-- Mobile DropDown -->
+            <div id="contactContainer"
+                class="space-y-4 lg:hidden w-full sm:w-[50vw] bg-secondaryblk px-5 h-[100vh] -translate-x-[120%] absolute top-0 left-0 transform transition-transform duration-500 ease-out py-14 z-20"
+                aria-hidden="true" aria-label="Mobile Navigation Menu">
+                <div class="relative">
+                    <!-- Close Button -->
+                    <button class="callusdrop close-menu-btn" aria-label="Close Menu">
+                        <i
+                            class="fa-regular fa-circle-xmark text-2xl text-secondary absolute -top-8 right-0 hover:text-primary duration-300"></i>
+                    </button>
+
+                    <!-- Navigation Links Section -->
+                    <div class="flex flex-col items-start gap-10" id="nav-link">
+                        <!-- Portfolio Link -->
+                        <a href="#portfolioo" id="sidebar-portfolio" onclick="setSidebarActive('sidebar-portfolio')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base">
+                            Portfolio
+                        </a>
+                        <!-- Services Link -->
+                        <a href="#servicess" id="sidebar-services" onclick="setSidebarActive('sidebar-services')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base">
+                            Services
+                        </a>
+                        <!-- Testimonials Link -->
+                        <a href="#testimonialss" id="sidebar-testimonials"
+                            onclick="setSidebarActive('sidebar-testimonials')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base">
+                            Testimonials
+                        </a>
+                        <!-- Let's Talk Button -->
+                        <a href="#"
+                            class="text-white bg-secondary py-3 px-7 rounded-full text-sm hover:bg-primary duration-500">
+                            <span class="flex items-center">
+                                <img src="assets/images/home/button-arrow.svg" alt="Button Arrow Icon"
+                                    class="w-3 mr-3 pt-2">
+                                Let's Talk
+                            </span>
+                        </a>
+                        <!-- Contact Information -->
+                        <div class="space-y-5">
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2"
+                                aria-label="WhatsApp Contact">
+                                <img src="assets/images/home/whatsapp.svg" alt="WhatsApp Icon">+92 344 8408098
+                            </a>
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2" aria-label="Email Contact">
+                                <img src="assets/images/home/paper-plane.svg"
+                                    alt="Paper Plane Icon">hello@hibalogics.com
+                            </a>
+                        </div>
+                        <!-- Social Media and Hire Links -->
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Follow Us on:</h1>
+                                <a href="#inquire" class="hover:scale-125 duration-300" aria-label="Facebook">
+                                    <img src="assets/images/home/facebook.svg" alt="Facebook Icon">
+                                </a>
+                                <a href="#inquire" class="hover:scale-125 duration-300" aria-label="LinkedIn">
+                                    <img src="assets/images/home/linkedin.svg" alt="LinkedIn Icon">
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Hire Us on:</h1>
+                                <!-- Add any relevant hire links -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Button For Top-To-Scroll -->
+        <button id="scrollToTop"
+            class="fixed z-50 bottom-8 right-8 w-14 h-14 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce focus:outline-none hover:bg-primary duration-300">
+            <i class="fa-solid fa-chevron-up text-lg"></i>
+        </button>
+        <!-- Section1 -->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-16 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-32 lg:pt-56">
                 <div class="flex flex-col justify-center items-start lg:items-center lg:text-center gap-4 lg:gap-7">
-                    <h1 class=" text-4xl lg:text-6xl text-secondary font-bold ">Web Design & Development</h1>
-                    <h1 class="text-4xl lg:text-6xl font-bold text-secondaryblk">services that drive results</h1>
+                    <h1 class="text-4xl lg:text-6xl text-secondary font-bold" id="web-design-title">Web Design &
+                        Development</h1>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-secondaryblk">Services That Drive Results</h2>
                     <p class="text-xl py-3 text-secondaryblk hidden lg:block">We specialize in delivering cutting-edge
-                        web design and
-                        development services <br>
-                        tailored for small and medium businesses.</p>
+                        web design and development services tailored for small and medium businesses.</p>
                     <p class="text-xl py-2 text-secondaryblk lg:hidden">We specialize in delivering cutting-edge web
-                        design and
-                        development services
-                        tailored for small and medium businesses.</p>
+                        design and development services tailored for small and medium businesses.</p>
 
                     <a href="#inquire"
-                        class="text-white bg-secondary py-3 px-6 lg:py-4 lg:px-8 rounded-full text-lg hover:bg-primary duration-500 shadow-md">
-                        <span class="flex items-center ">
+                        class="text-white bg-secondary py-3 px-6 lg:py-4 lg:px-8 rounded-full text-lg hover:bg-primary duration-500 shadow-md"
+                        aria-label="View Our Work">
+                        <span class="flex items-center">
                             <img src="assets/images/home/button-arrow.svg" alt="Button Arrow" class="w-3 mr-4 pt-2">
                             Our Work
                         </span>
@@ -95,20 +214,20 @@
                 </div>
             </div>
         </section>
+        <!-- section2 Services section -->
+        <section id="services" data-aos="fade-up" data-aos-duration="1500">
+            <div
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24 grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <!-- section2 -->
-        <section data-aos="fade-up" data-aos-duration="1500">
-            <div id="servicess"
-                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
-                <!-- left Section -->
-                <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="1000">
+                <!-- Left Section -->
+                <div class="lg:col-span-1 space-y-4" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
                         Services
                     </span>
                     <h2 class="text-3xl font-bold text-secondaryblk leading-snug">
                         Crafting Digital Experiences with Expertise
                     </h2>
-                    <p class="text-secondaryblk ">
+                    <p class="text-secondaryblk">
                         Unlock your online potential with our one-stop-shop for web design, Webflow development, UI/UX
                         mastery, and tailored web solutions.
                     </p>
@@ -116,38 +235,38 @@
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2" data-aos="fade-up" data-aos-duration="1000">
-                    <div class=" lg:px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
+                    <div class="lg:px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
                         <ul class="text-secondaryblk">
+                            <!-- Web Development Section -->
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg border-t border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">Web Development</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
-                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
-                                    style="transition: max-height 0.4s ease-in-out 0s;">
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
                                     <div class="py-4 max-w-6xl mx-auto space-y-6 text-secondaryblk">
                                         <div class="space-y-4">
-                                            <p class=" leading-relaxed ">
+                                            <p class="leading-relaxed">
                                                 Embark on a digital journey with our Web Development expertise. We turn
                                                 concepts into robust, responsive, and visually appealing websites. From
                                                 front-end design to back-end functionality, we ensure a seamless user
                                                 experience.
                                             </p>
-                                            <div class="space-y-1">
-                                                <p class="">● Custom Web Development</p>
-                                                <p class="">● Responsive Design</p>
-                                                <p class="">● Cross-Browser Compatibility</p>
-                                                <p class="">● Scalable Architecture</p>
-                                                <p class="">● E-Commerce Solutions</p>
-                                                <p class="">● Content Management Systems (CMS)</p>
-                                                <p class="">● Ongoing Maintenance and Support</p>
-                                            </div>
+                                            <ul class="space-y-1">
+                                                <li>● Custom Web Development</li>
+                                                <li>● Responsive Design</li>
+                                                <li>● Cross-Browser Compatibility</li>
+                                                <li>● Scalable Architecture</li>
+                                                <li>● E-Commerce Solutions</li>
+                                                <li>● Content Management Systems (CMS)</li>
+                                                <li>● Ongoing Maintenance and Support</li>
+                                            </ul>
                                         </div>
 
                                         <!-- Tools & Technologies Section -->
-                                        <div class="space-y-4 ">
+                                        <div class="space-y-4">
                                             <h3 class="text-xl font-semibold text-secondaryblk">Tools & Technologies
                                             </h3>
                                             <div class="grid grid-cols-5 gap-4 w-[350px]">
@@ -201,40 +320,39 @@
                                                         class="w-8 h-8 object-contain">
                                                 </div>
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>
                             </li>
+
+                            <!-- UI/UX Design Section -->
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">UI/UX Design</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
-                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
-                                    style="transition: max-height 0.4s ease-in-out 0s;">
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
                                     <div class="py-4 max-w-6xl mx-auto space-y-6 text-secondaryblk">
                                         <div class="space-y-4">
-                                            <p class=" leading-relaxed ">
+                                            <p class="leading-relaxed">
                                                 Elevate your brand with our UI/UX Design services. We focus on creating
                                                 intuitive, aesthetically pleasing interfaces that enhance user
                                                 engagement. From wireframes to prototypes, we bring your vision to life.
                                             </p>
-                                            <div class="space-y-1">
-                                                <p class="">● User-Centric Design</p>
-                                                <p class="">● Intuitive UI/UX</p>
-                                                <p class="">● Wireframing and Prototyping</p>
-                                                <p class="">● Usability Testing</p>
-                                                <p class="">● Brand Consistency</p>
-                                                <p class="">● Visual Storytelling</p>
-                                            </div>
+                                            <ul class="space-y-1">
+                                                <li>● User-Centric Design</li>
+                                                <li>● Intuitive UI/UX</li>
+                                                <li>● Wireframing and Prototyping</li>
+                                                <li>● Usability Testing</li>
+                                                <li>● Brand Consistency</li>
+                                                <li>● Visual Storytelling</li>
+                                            </ul>
                                         </div>
 
                                         <!-- Tools & Technologies Section -->
-                                        <div class="space-y-4 ">
+                                        <div class="space-y-4">
                                             <h3 class="text-xl font-semibold text-secondaryblk">Tools & Technologies
                                             </h3>
                                             <div class="grid grid-cols-5 gap-4 w-[350px]">
@@ -244,48 +362,45 @@
                                                         class="w-8 h-8 object-contain">
                                                 </div>
                                                 <div class="h-14 w-14 bg-white flex items-center justify-center">
-                                                    <img src="assets/images/home/xd.svg" alt="XD"
+                                                    <img src="assets/images/home/xd.svg" alt="Adobe XD"
                                                         class="w-8 h-8 object-contain">
                                                 </div>
                                                 <div
                                                     class="h-14 w-14 bg-white rounded-md flex items-center justify-center">
-                                                    <img src="assets/images/home/ai.svg" alt="AI"
+                                                    <img src="assets/images/home/ai.svg" alt="Adobe Illustrator"
                                                         class="w-8 h-8 object-contain">
                                                 </div>
-
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>
                             </li>
+
+                            <!-- App Development Section -->
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">App Development</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
-                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
-                                    style="transition: max-height 0.4s ease-in-out 0s;">
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
                                     <div class="py-4 max-w-6xl mx-auto space-y-6 text-secondaryblk">
                                         <div class="space-y-4">
-                                            <p class=" leading-relaxed ">
+                                            <p class="leading-relaxed">
                                                 Bring your ideas to life with our comprehensive app development
                                                 services. From concept to execution, we create apps that stand out and
                                                 deliver a seamless user experience.
                                             </p>
-                                            <div class="space-y-1">
-                                                <p class="">● Native App Development</p>
-                                                <p class="">● Cross-Platform Compatibility</p>
-                                                <p class="">● User-Friendly Interfaces</p>
-
-                                            </div>
+                                            <ul class="space-y-1">
+                                                <li>● Native App Development</li>
+                                                <li>● Cross-Platform Compatibility</li>
+                                                <li>● User-Friendly Interfaces</li>
+                                            </ul>
                                         </div>
 
                                         <!-- Tools & Technologies Section -->
-                                        <div class="space-y-4 ">
+                                        <div class="space-y-4">
                                             <h3 class="text-xl font-semibold text-secondaryblk">Tools & Technologies
                                             </h3>
                                             <div class="grid grid-cols-5 gap-4 w-[350px]">
@@ -295,117 +410,22 @@
                                                         class="w-8 h-8 object-contain">
                                                 </div>
                                                 <div class="h-14 w-14 bg-white flex items-center justify-center">
-                                                    <img src="assets/images/home/react.svg" alt="React-js"
+                                                    <img src="assets/images/home/react-native.svg" alt="React Native"
                                                         class="w-8 h-8 object-contain">
                                                 </div>
-
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
-                                    <span class="flex-1 text-2xl">Payment Integration</span>
-                                    <i class="far fa-plus text-primary"></i>
-                                </button>
-                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
-                                    style="transition: max-height 0.4s ease-in-out 0s;">
-                                    <div class="py-4 max-w-6xl mx-auto space-y-6 text-secondaryblk">
-                                        <div class="space-y-4">
-                                            <p class=" leading-relaxed ">
-                                                Elevate your e-commerce game with our Payment Integration expertise.
-                                                From simple transactions to complex financial processes, we integrate
-                                                payment gateways that prioritize security, convenience, and user trust.
-                                            </p>
-                                            <div class="space-y-1">
-                                                <p class="">● Secure Payment Gateway Integration</p>
-                                                <p class="">● Multiple Payment Options</p>
-                                                <p class="">● PCI Compliance</p>
-                                                <p class="">● Subscription Billing Integration</p>
-                                                <p class="">● Customized Payment Solutions
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Tools & Technologies Section -->
-                                        <div class="space-y-4 ">
-                                            <h3 class="text-xl font-semibold text-secondaryblk">Tools & Technologies
-                                            </h3>
-                                            <div class="grid grid-cols-5 gap-4 w-[350px]">
-                                                <div
-                                                    class="h-14 w-16 bg-white rounded-md flex items-center justify-center">
-                                                    <img src="assets/images/home/stripe.svg" alt="Stripe"
-                                                        class="w-8 h-8 object-contain">
-                                                </div>
-                                                <div class="h-14 w-16 bg-white flex items-center justify-center">
-                                                    <img src="assets/images/home/paypal.svg" alt="Paypal"
-                                                        class="object-contain">
-                                                </div>
-                                                <div class="h-14 w-16 bg-white flex items-center justify-center">
-                                                    <img src="assets/images/home/airtel.svg" alt="Airtel"
-                                                        class="w-8 h-8 object-contain">
-                                                </div>
-                                                <div class="h-14 w-16 bg-white flex items-center justify-center">
-                                                    <img src="assets/images/home/flutterwave1.svg" alt="Flutterwave"
-                                                        class="w-14 h-14 object-contain">
-                                                </div>
-
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
-                                    <span class="flex-1 text-2xl">API Integration</span>
-                                    <i class="far fa-plus text-primary"></i>
-                                </button>
-                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
-                                    style="transition: max-height 0.4s ease-in-out 0s;">
-                                    <div class="py-4 max-w-6xl mx-auto space-y-6 text-secondaryblk">
-                                        <div class="space-y-4">
-                                            <p class=" leading-relaxed ">
-                                                Enhance the functionality of your digital platform with our API
-                                                Integration services. We seamlessly integrate third-party APIs, enabling
-                                                your system to communicate and collaborate with external services
-                                                effortlessly.
-                                            </p>
-                                            <div class="space-y-1">
-                                                <p class="">● Social Media API Integration</p>
-                                                <p class="">● Travel API Integration</p>
-                                                <p class="">● Loyalty Program Integration</p>
-                                                <p class="">● SMS API Integration</p>
-                                                <p class="">● Secure API Connections
-                                                </p>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                 </div>
-
             </div>
         </section>
-
-        <!-- section3 -->
+        <!-- section3 Portfolio section-->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div id="portfolioo" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20">
+            <div id="portfolio" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -427,8 +447,9 @@
                     <!-- Card 1 -->
                     <div class="rounded-xl" data-aos="fade-up" data-aos-duration="1000">
                         <div>
-                            <img src="assets/images/home/elite-estate-1.png" alt="Elite-Estates"
-                                class="object-cover w-full h-full rounded-xl">
+                            <img src="assets/images/home/elite-estate-1.png"
+                                alt="Elite Estates Listing Dreams, Finding Homes"
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Elite Estates - Listing
@@ -455,7 +476,7 @@
                                 </p>
                                 <div class="mt-5 flex lg:hidden">
                                     <a href="#inquire"
-                                        class="text-white bg-secondary py-2 px-6 text-center rounded-full  text-sm xl:text-base hover:bg-primary duration-500 shadow-md">
+                                        class="text-white bg-secondary py-2 px-6 text-center rounded-full text-sm xl:text-base hover:bg-primary duration-500 shadow-md">
                                         <span class="flex items-center justify-center">
                                             <img src="assets/images/home/button-arrow.svg" alt="Button Arrow"
                                                 class="w-3 mr-3 pt-1">
@@ -466,11 +487,12 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Card 2 -->
-                    <div class="rounded-xl  lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rounded-xl lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
                         <div>
-                            <img src="assets/images/home/mep-2.png" alt="MEPCO"
-                                class="object-cover w-full h-full rounded-xl">
+                            <img src="assets/images/home/mep-2.png" alt="MEPCO Transforming MEP Services"
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">MEP - Transforming
@@ -493,9 +515,9 @@
                                 </div>
                                 <p class="leading-relaxed font-light mt-5">
                                     MEP's digital transformation unfolds with a redesigned website, design in Figma and
-                                    integrated into a Laravel CMS with front end in FTailwind CSS. MEP Offers services
-                                    for malls, commercial buildings, and various sectors, enhance your experience in the
-                                    mechanical, electrical, and plumbing domains.
+                                    integrated into a Laravel CMS with front end in Tailwind CSS. MEP offers services
+                                    for malls, commercial buildings, and various sectors, enhancing your experience in
+                                    the mechanical, electrical, and plumbing domains.
                                 </p>
                                 <!-- Last Button -->
                                 <div class="mt-5 flex lg:hidden">
@@ -511,93 +533,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Card 3 -->
-                    <div class="rounded-xl" data-aos="fade-up" data-aos-duration="1000">
-                        <div>
-                            <img src="assets/images/home/seewa-es-2.png" alt="Seewasopa"
-                                class="object-cover w-full h-full rounded-xl">
-                            <div class="py-3 px-1">
-                                <div class="flex justify-between items-center">
-                                    <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Seewasopa - Uncover
-                                        Spain &<br class="hidden lg:inline">Beyond</h3>
-                                    <a href="#inquire"
-                                        class="text-white bg-secondary py-2 w-28 xl:w-32 text-center rounded-full text-sm xl:text-base hover:bg-primary duration-500 shadow-md hidden lg:block">
-                                        <span class="flex items-center justify-center">
-                                            <img src="assets/images/home/button-arrow.svg" alt="Button Arrow"
-                                                class="w-3 mr-3 pt-1">
-                                            Visit Site
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="flex flex-wrap gap-3 mt-5">
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">PHP</span>
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">Laravel</span>
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">CMS</span>
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">Payment Gateway
-                                        Integration</span>
-                                </div>
-                                <p class="leading-relaxed font-light mt-5">
-                                    Offered Laravel services to SEEWASOPA webiste for France, making websites dynamic
-                                    through custom CMS development and payment integration for enhanced functionality.
-                                </p>
-                                <div class="mt-5 flex lg:hidden">
-                                    <a href="#inquire"
-                                        class="text-white bg-secondary py-2 px-6 text-center rounded-full  text-sm xl:text-base hover:bg-primary duration-500 shadow-md">
-                                        <span class="flex items-center justify-center">
-                                            <img src="assets/images/home/button-arrow.svg" alt="Button Arrow"
-                                                class="w-3 mr-3 pt-1">
-                                            Visit Site
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Card 4 -->
-                    <div class="rounded-xl  lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
-                        <div>
-                            <img src="assets/images/home/studio-spa.png" alt="Studio SPA"
-                                class="object-cover w-full h-full rounded-xl">
-                            <div class="py-3 px-1">
-                                <div class="flex justify-between items-center">
-                                    <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Studio SPA - Tranquil
-                                        Beauty in<br class="hidden lg:inline"> Every Pixel</h3>
-                                    <a href="#inquire"
-                                        class="text-white bg-secondary py-2 w-28 xl:w-32 text-center rounded-full text-base hover:bg-primary duration-500 shadow-md hidden lg:block">
-                                        <span class="flex items-center justify-center">
-                                            <img src="assets/images/home/button-arrow.svg" alt="Button Arrow"
-                                                class="w-3 mr-3 pt-1">
-                                            Visit Site
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="flex flex-wrap gap-3 mt-5">
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">Laravel</span>
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">PHP</span>
-                                    <span class="bg-sky-100 text-sm px-4 py-2 rounded-full">PSD to Bootstrap</span>
-
-                                </div>
-                                <p class="leading-relaxed font-light mt-5">
-                                    WE converted Studio SPA PSD files into a Bootstrap with pixel-perfect design,
-                                    ensuring responsiveness across mobile and tablet devices. Elevating user experience,
-                                    we've integrated mail functionality into form submissions with Laravel.
-                                </p>
-                                <!-- Last Button -->
-                                <div class="mt-5 flex lg:hidden">
-                                    <a href="#inquire"
-                                        class="text-white bg-secondary py-2 px-6 text-center rounded-full text-base hover:bg-primary duration-500 shadow-md">
-                                        <span class="flex items-center justify-center">
-                                            <img src="assets/images/home/button-arrow.svg" alt="Button Arrow"
-                                                class="w-3 mr-3 pt-1">
-                                            Visit Site
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Add more cards here with the same structure -->
                 </div>
+
                 <div class="mt-8 sm:mt-12 lg:mt-20 flex justify-center">
                     <a href="#"
                         class="text-white bg-secondary py-4 px-8 w-full sm:w-auto text-center rounded-full text-base hover:bg-primary duration-500 shadow-md">
@@ -607,13 +546,11 @@
                         </span>
                     </a>
                 </div>
-
             </div>
         </section>
-
-        <!-- section4 -->
+        <!-- section4 Testimonials section-->
         <section id="testimonialss" data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -623,23 +560,22 @@
                         Client Success Stories
                     </h2>
                     <p class="text-secondaryblk">
-
                         Discover what our clients have to say about their experiences partnering with<br
-                            class="hidden lg:inline">
-                        us. We take pride in delivering exceptional solutions and fostering lasting<br
-                            class="hidden lg:inline">
-                        relationships with businesses across various industries.
+                            class="hidden lg:inline"> us. We take pride in delivering exceptional solutions and
+                        fostering lasting<br class="hidden lg:inline"> relationships with businesses across various
+                        industries.
                     </p>
                 </div>
 
                 <!-- Card Grid -->
-                <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-secondaryblk">
+                <div
+                    class="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-secondaryblk">
                     <!-- Card 1 -->
                     <div class="bg-white shadow-md shadow-gray-200 rounded-xl p-6" data-aos="fade-up"
                         data-aos-duration="1000">
                         <div class="flex items-center">
                             <!-- Star Ratings -->
-                            <div class="flex text-primary gap-1">
+                            <div class="flex text-primary gap-1" aria-label="5 stars">
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
@@ -655,12 +591,13 @@
                         <!-- Author Name -->
                         <h5 class="text-xl font-semibold">Garry Iddlington</h5>
                     </div>
+
                     <!-- Card 2 -->
                     <div class="bg-white shadow-md shadow-gray-200 rounded-xl p-6" data-aos="fade-up"
                         data-aos-duration="1200">
                         <div class="flex items-center">
                             <!-- Star Ratings -->
-                            <div class="flex text-primary gap-1">
+                            <div class="flex text-primary gap-1" aria-label="5 stars">
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
@@ -670,18 +607,19 @@
                         </div>
                         <!-- Testimonial Text -->
                         <p class="lg:text-lg my-4 sm:my-6">
-                            Absolutely great . I will always work for this team . They have been so helpful . I want to
-                            work with you guys always
+                            Absolutely great. I will always work for this team. They have been so helpful. I want to
+                            work with you guys always.
                         </p>
                         <!-- Author Name -->
                         <h5 class="text-xl font-semibold">Ehren Ransley</h5>
                     </div>
+
                     <!-- Card 3 -->
                     <div class="bg-white shadow-md shadow-gray-200 rounded-xl p-6" data-aos="fade-up"
                         data-aos-duration="1000">
                         <div class="flex items-center">
                             <!-- Star Ratings -->
-                            <div class="flex text-primary gap-1">
+                            <div class="flex text-primary gap-1" aria-label="5 stars">
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
@@ -690,10 +628,10 @@
                             </div>
                         </div>
                         <!-- Testimonial Text -->
-                        <p class="lg:text-lg  my-4 sm:my-6">
-                            Really Amazing experience , it is rare to find really experienced like HibaLogics. I was
-                            happy to work with them,polite technically understanding , aware of backend job very well ,
-                            thanks alot.
+                        <p class="lg:text-lg my-4 sm:my-6">
+                            Really amazing experience, it is rare to find really experienced like HibaLogics. I was
+                            happy to work with them, polite, technically understanding, aware of backend job very well,
+                            thanks a lot.
                         </p>
                         <!-- Author Name -->
                         <h5 class="text-xl font-semibold">Manni Ismail</h5>
@@ -704,7 +642,7 @@
                         data-aos-duration="1200">
                         <div class="flex items-center">
                             <!-- Star Ratings -->
-                            <div class="flex text-primary gap-1">
+                            <div class="flex text-primary gap-1" aria-label="5 stars">
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
                                 <span><i class="fas fa-star "></i></span>
@@ -713,7 +651,7 @@
                             </div>
                         </div>
                         <!-- Testimonial Text -->
-                        <p class="lg:text-lg  my-4 sm:my-6">
+                        <p class="lg:text-lg my-4 sm:my-6">
                             All requirements were implemented to our complete satisfaction. Short-term changes were
                             taken into account directly. Great communication!
                         </p>
@@ -724,106 +662,102 @@
                 </div>
             </div>
         </section>
-
-        <!-- footer -->
-        <footer class="bg-secondaryblk">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-14">
-                <div class=" grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4 lg:mb-12 ">
-                    <!-- left Section -->
-                    <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="1000">
-                        <span class="inline-block bg-slate-700 text-white font-medium py-2 px-3 rounded-full text-xs">
-                            Services
-                        </span>
-                        <h2 class="text-2xl xl:text-[28px] font-semibold text-gray-100 leading-relaxed">
-                            Connect With Us - Let's Start a Conversation about Your Ideas
-                            and Goals
-                        </h2>
-
-                    </div>
-
-                    <!-- Right Section -->
-                    <div class="lg:col-span-2 lg:ml-12" data-aos="fade-up" data-aos-duration="1000">
-                        <form class="space-y-6">
-                            <!-- Name and Email -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <input type="text" id="name"
-                                        class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
-                                        placeholder="Your Name" />
-                                </div>
-                                <div>
-                                    <input type="email" id="email"
-                                        class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
-                                        placeholder="Your Email" />
-                                </div>
-                            </div>
-
-                            <!-- Project/Idea -->
-                            <div>
-                                <textarea id="project" rows="2"
-                                    class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none pt-6 placeholder-gray-100"
-                                    placeholder="Tell us about your project/idea"></textarea>
-                            </div>
-
-                            <!-- Where Did You Hear -->
-                            <div>
-                                <input type="text" id="source"
-                                    class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
-                                    placeholder="Where did you hear about us?" />
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="flex pt-6">
-                                <a href="#inquire"
-                                    class="text-secondaryblk bg-white py-2 px-6 rounded-full text-lg hover:bg-slate-200 duration-500 shadow-md">
-                                    <span class="flex items-center ">
-                                        <img src="assets/images/home/btnblack-arrow.svg" alt="Button black Arrow"
-                                            class="w-3 mr-3 pt-2">
-                                        Submit
-                                    </span>
-                                </a>
-                            </div>
-                        </form>
-
-                    </div>
-
+        <!-- section5 FAQs section-->
+        <section id="FAQs" data-aos="fade-up" data-aos-duration="1000">
+            <div
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-24 grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- left Section -->
+                <div class="lg:col-span-1 space-y-4" data-aos="fade-up" data-aos-duration="800">
+                    <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
+                        FAQ
+                    </span>
+                    <h2 class="text-3xl font-bold text-secondaryblk leading-snug" itemprop="headline">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-secondaryblk" itemprop="description">
+                        We transform your ideas into simple, effective digital solutions.
+                        From web design to custom apps, our team delivers tailored
+                        results that drive growth and success.
+                    </p>
                 </div>
 
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-4 justify-between border-b border-dashed py-7">
-                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
-                        <a href="#inquire" class="flex text-gray-100 items-center gap-2">
-                            <img src="assets/images/home/whatsapp.svg" alt="Whatsapp">+92 344 8408098
-                        </a>
-                        <a href="#inquire" class="flex text-gray-100 items-center gap-2">
-                            <img src="assets/images/home/paper-plane.svg" alt="Paper-plane">hello@hibalogics.com
-                        </a>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <h1 class="text-gray-100 mr-2">Follow Us on :</h1>
-                        <a href="#inquire" class="hover:scale-125 duration-300"> <img
-                                src="assets/images/home/facebook.svg" alt="Facebook"></a>
-                        <a href="#inquire" class="hover:scale-125 duration-300"><img
-                                src="assets/images/home/linkedin.svg" alt="linkdin"></a>
+                <!-- Right Section -->
+                <div class="lg:col-span-2" data-aos="fade-up" data-aos-duration="800">
+                    <div class="lg:px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
+                        <ul class="text-secondaryblk">
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" aria-controls="faq-1" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">What services do you offer?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div id="faq-1" class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t" itemprop="text">
+                                        At HibaLogics, we offer a wide range of services to help bring your digital
+                                        presence to life. Our core offerings include Web Development, UI/UX Design, and
+                                        Mobile App Development. We work closely with clients to deliver responsive,
+                                        user-friendly, and visually compelling solutions tailored to their needs.
+                                    </p>
+                                </div>
+                            </li>
 
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" aria-controls="faq-2" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">How do I get started with your
+                                        agency?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div id="faq-2" class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t" itemprop="text">
+                                        Getting started with HibaLogics is simple! You can reach out to us through our
+                                        contact page or email. We will schedule an initial consultation to understand
+                                        your project requirements. Once we have a clear understanding, we will provide a
+                                        roadmap and timeline to begin the development process.
+                                    </p>
+                                </div>
+                            </li>
 
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" aria-controls="faq-3" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">Do you offer ongoing support after
+                                        project completion?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div id="faq-3" class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t" itemprop="text">
+                                        Yes, we offer ongoing support to ensure your project remains up-to-date and
+                                        functions smoothly after completion. Whether you need maintenance, updates, or
+                                        troubleshooting, our team at HibaLogics is here to assist you with any
+                                        post-launch needs.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" aria-controls="faq-4" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">How long does a typical project
+                                        take?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div id="faq-4" class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t" itemprop="text">
+                                        The duration of a project depends on its scope and complexity. On average, web
+                                        development projects at HibaLogics take 4 to 6 weeks, while mobile app
+                                        development may take a bit longer. We always strive to deliver high-quality
+                                        solutions within an agreed timeline and will provide you with an estimated
+                                        timeline at the start of the project.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="text-gray-100 text-lg md:text-xl font-medium mt-7">Copyright © 2023 Hibalogics.</div>
-
             </div>
-
-
-        </footer>
-
-    </main>
-
-    <script src="assets/js/script.js"></script>
-    <script src="assets/aos-master/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init();
-    </script>
-</body>
-
-</html>
+        </section>

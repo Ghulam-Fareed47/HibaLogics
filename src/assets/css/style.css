@@ -28,6 +28,40 @@
         transition: background-color 0.2s ease-in-out; 
     }
 
+    
+   /* Active link color change */
+.sidebar-link.active {
+  color: #2687F0; /* Active color */
+}
+
+/* Active class for Tailwind underline styling */
+.sidebar-link {
+position: relative;
+transition: color 0.3s ease-in-out; /* Smooth color change transition */
+}
+
+/* Underline effect */
+.sidebar-link::after {
+content: '';
+position: absolute;
+left: 50%;
+transform: translateX(-50%) scaleX(0); /* Starts hidden */
+top: 30px;
+width: 45%;
+height: 4px;
+border-radius: 50px;
+background-color: #2687F0;
+transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.sidebar-link.active::after {
+transform: translateX(-50%) scaleX(1); /* Expands smoothly */
+}
+
+.sidebar-link:hover {
+color: #2687F0; /* Color change on hover */
+}
+
 
 
      

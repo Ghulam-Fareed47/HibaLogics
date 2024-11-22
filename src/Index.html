@@ -17,10 +17,10 @@
 </head>
 
 
-<body>
+<body class="scroll-py-16">
     <main class="font-sanssrf bg-[url('assets/images/home/background.svg')]  bg-repeat ">
         <!-- HEADER -->
-        <header class="sticky top-0 z-20 w-full">
+        <header class="fixed top-0 z-20 w-full">
             <!-- Navbar Section -->
             <nav class="w-full z-10 nav " id="navbar">
                 <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-5 flex justify-between items-center"
@@ -36,21 +36,21 @@
                     <!-- Navigation Links Section -->
                     <div class="flex items-center gap-7" id="nav-links">
                         <!-- Portfolio Link -->
-                        <a href="#portfolioo" id="portfolio" onclick="setActive('portfolio')"
-                            class="nav-link relative hover:text-primary duration-500 text-base  hidden lg:block active">
+                        <a href="#portfolioo" id="portfolio-link" onclick="setActive('portfolio-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Portfolio
                         </a>
                         <!-- Services Link -->
-                        <a href="#servicess" id="services" onclick="setActive('services')"
-                            class="nav-link relative hover:text-primary duration-500 text-base   hidden lg:block">
+                        <a href="#servicess" id="services-link" onclick="setActive('services-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Services
                         </a>
                         <!-- Testimonials Link -->
-                        <a href="#testimonialss" id="testimonials" onclick="setActive('testimonials')"
-                            class="nav-link relative hover:text-primary duration-500 text-base  hidden lg:block">
+                        <a href="#testimonialss" id="testimonials-link" onclick="setActive('testimonials-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Testimonials
                         </a>
-
+                    
                         <!-- Let's Talk Button -->
                         <a href="#"
                             class="text-white bg-secondary py-3 px-8 rounded-full text-lg hover:bg-primary duration-500 hidden lg:block">
@@ -59,20 +59,96 @@
                                 Let's Talk
                             </span>
                         </a>
-
+                    
                         <!-- Mobile Menu Button -->
-                        <button class="ml-4 lg:hidden">
-                            <i class="fal fa-bars text-3xl"></i>
+                        <button id="hamburgerButton" class="callusdrop group ml-4 lg:hidden inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded transition"
+                            aria-pressed="false" onclick="toggleMenu(this)">
+                            <span class="sr-only">Menu</span>
+                            <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-500 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                                <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
+                                    y="7" width="16" height="2" rx="1"></rect>
+                                <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                            </svg>
                         </button>
                     </div>
+                    
                 </div>
             </nav>
+
+            <!-- Mobile DropDown -->
+            <div id="contactContainer"
+                class=" space-y-4 lg:hidden w-full sm:w-[50vw] bg-secondaryblk px-5 h-[100vh] -translate-x-[120%]  absolute top-0 left-0 transform transition-transform duration-500 ease-out py-14 z-20 " >
+                <div class="relative">
+                    <button class="callusdrop close-menu-btn">
+                        <i
+                            class="fa-regular fa-circle-xmark text-2xl text-secondary  absolute -top-8 right-0 hover:text-primary duration-300"></i>
+                    </button>
+                    <!-- Navigation Links Section -->
+                    <div class="flex flex-col items-start gap-10" id="nav-link">
+                        <!-- Portfolio Link (Initially Active) -->
+                        <a href="#portfolioo" id="sidebar-portfolio" onclick="setSidebarActive('sidebar-portfolio')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base  ">
+                            Portfolio
+                        </a>
+                        <!-- Services Link -->
+                        <a href="#servicess" id="sidebar-services" onclick="setSidebarActive('sidebar-services')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base ">
+                            Services
+                        </a>
+                        <!-- Testimonials Link -->
+                        <a href="#testimonialss" id="sidebar-testimonials" onclick="setSidebarActive('sidebar-testimonials')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base ">
+                            Testimonials
+                        </a>
+                        <!-- Let's Talk Button -->
+                        <a href="#"
+                            class="text-white bg-secondary py-3 px-7 rounded-full text-sm hover:bg-primary duration-500 ">
+                            <span class="flex items-center">
+                                <img src="assets/images/home/button-arrow.svg" alt="Button Arrow" class="w-3 mr-3 pt-2">
+                                Let's Talk
+                            </span>
+                        </a>
+                        <div class="space-y-5">
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                                <img src="assets/images/home/whatsapp.svg" alt="Whatsapp">+92 344 8408098
+                            </a>
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                                <img src="assets/images/home/paper-plane.svg" alt="Paper-plane">hello@hibalogics.com
+                            </a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Follow Us on :</h1>
+                                <a href="#inquire" class="hover:scale-125 duration-300"> <img
+                                        src="assets/images/home/facebook.svg" alt="Facebook"></a>
+                                <a href="#inquire" class="hover:scale-125 duration-300"><img
+                                        src="assets/images/home/linkedin.svg" alt="linkdin"></a>
+
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Hire Us on :</h1>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
+        <!-- Button For Top-To-Scroll -->
+        <button id="scrollToTop" 
+        class="fixed z-50 bottom-8 right-8 w-14 h-14 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce focus:outline-none hover:bg-primary duration-300">
+        <i class="fa-solid fa-chevron-up text-lg"></i>
+    </button>
+
         <!-- HERO -->
-        <!-- section1 -->
+        <!-- section1 Landing page-->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-16 lg:py-32">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-32 lg:pt-56">
                 <div class="flex flex-col justify-center items-start lg:items-center lg:text-center gap-4 lg:gap-7">
                     <h1 class=" text-4xl lg:text-6xl text-secondary font-bold ">Web Design & Development</h1>
                     <h1 class="text-4xl lg:text-6xl font-bold text-secondaryblk">services that drive results</h1>
@@ -96,10 +172,10 @@
             </div>
         </section>
 
-        <!-- section2 -->
+        <!-- section2 Services section-->
         <section data-aos="fade-up" data-aos-duration="1500">
             <div id="servicess"
-                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
                 <!-- left Section -->
                 <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -120,8 +196,8 @@
                         <ul class="text-secondaryblk">
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg border-t  border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">Web Development</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
@@ -209,8 +285,8 @@
                             </li>
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">UI/UX Design</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
@@ -262,8 +338,8 @@
                             </li>
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">App Development</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
@@ -309,8 +385,8 @@
                             </li>
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">Payment Integration</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
@@ -367,8 +443,8 @@
                             </li>
                             <li>
                                 <button
-                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
-                                    aria-expanded="false" onclick="toggleFAQ(this)">
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleservices(this)">
                                     <span class="flex-1 text-2xl">API Integration</span>
                                     <i class="far fa-plus text-primary"></i>
                                 </button>
@@ -403,9 +479,9 @@
             </div>
         </section>
 
-        <!-- section3 -->
+        <!-- section3 Portfolio section-->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div id="portfolioo" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20">
+            <div id="portfolioo" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -428,7 +504,7 @@
                     <div class="rounded-xl" data-aos="fade-up" data-aos-duration="1000">
                         <div>
                             <img src="assets/images/home/elite-estate-1.png" alt="Elite-Estates"
-                                class="object-cover w-full h-full rounded-xl">
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Elite Estates - Listing
@@ -470,7 +546,7 @@
                     <div class="rounded-xl  lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
                         <div>
                             <img src="assets/images/home/mep-2.png" alt="MEPCO"
-                                class="object-cover w-full h-full rounded-xl">
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">MEP - Transforming
@@ -515,7 +591,7 @@
                     <div class="rounded-xl" data-aos="fade-up" data-aos-duration="1000">
                         <div>
                             <img src="assets/images/home/seewa-es-2.png" alt="Seewasopa"
-                                class="object-cover w-full h-full rounded-xl">
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Seewasopa - Uncover
@@ -555,10 +631,11 @@
                     </div>
 
                     <!-- Card 4 -->
+                  
                     <div class="rounded-xl  lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
                         <div>
-                            <img src="assets/images/home/studio-spa.png" alt="Studio SPA"
-                                class="object-cover w-full h-full rounded-xl">
+                            <img src="assets/images/home/studio.png" alt="Studio SPA"
+                                class="object-cover w-full h-full rounded-xl hover:scale-105 duration-500 hover:shadow-2xl">
                             <div class="py-3 px-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-xl lg:text-lg xl:text-xl font-semibold mt-4">Studio SPA - Tranquil
@@ -611,9 +688,9 @@
             </div>
         </section>
 
-        <!-- section4 -->
+        <!-- section4 Testimonials section-->
         <section id="testimonialss" data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pb-20">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -633,9 +710,9 @@
                 </div>
 
                 <!-- Card Grid -->
-                <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-secondaryblk">
+                <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-secondaryblk ">
                     <!-- Card 1 -->
-                    <div class="bg-white shadow-md shadow-gray-200 rounded-xl p-6" data-aos="fade-up"
+                    <div class="bg-white shadow-md shadow-gray-200 rounded-xl p-6 " data-aos="fade-up"
                         data-aos-duration="1000">
                         <div class="flex items-center">
                             <!-- Star Ratings -->
@@ -725,12 +802,117 @@
             </div>
         </section>
 
+        <!-- section5 FAQs section-->
+        <section data-aos="fade-up" data-aos-duration="1000">
+            <div id="FAQs"
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
+                <!-- left Section -->
+                <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="800">
+                    <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
+                        FAQ
+                    </span>
+                    <h2 class="text-3xl font-bold text-secondaryblk leading-snug">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-secondaryblk ">
+                        We transform your ideas into simple, effective digital solutions.
+                        From web design to custom apps, our team delivers tailored
+                        results that drive growth and success.
+                    </p>
+                </div>
+
+                <!-- Right Section -->
+                <div class="lg:col-span-2" data-aos="fade-up" data-aos-duration="800">
+                    <div class="lg:px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
+                        <ul class="text-secondaryblk">
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">What services do you offer?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t">
+                                        At HibaLogics, we offer a wide range of services to help bring your digital
+                                        presence to life. Our core offerings include Web Development, UI/UX Design, and
+                                        Mobile App Development. We work closely with clients to deliver responsive,
+                                        user-friendly, and visually compelling solutions tailored to their needs.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">How do I get started with your
+                                        agency?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t">
+                                        Getting started with HibaLogics is simple! You can reach out to us through our
+                                        contact page or email. We will schedule an initial consultation to understand
+                                        your project requirements. Once we have a clear understanding, we will provide a
+                                        roadmap and timeline to begin the development process.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">Do you offer ongoing support after
+                                        project completion?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t">
+                                        Yes, we offer ongoing support to ensure your project remains up-to-date and
+                                        functions smoothly after completion. Whether you need maintenance, updates, or
+                                        troubleshooting, our team at HibaLogics is here to assist you with any
+                                        post-launch needs.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="border-t border-b border-base-content/10 rounded-md">
+                                <button
+                                    class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left md:text-lg transition-all duration-300 ease-in-out"
+                                    aria-expanded="false" onclick="toggleFAQs(this)">
+                                    <span class="flex-1 text-lg md:text-xl pr-4">How long does a typical project
+                                        take?</span>
+                                    <i class="far fa-plus text-primary"></i>
+                                </button>
+                                <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+                                    <p class="py-4 text-secondaryblk leading-relaxed border-t">
+                                        The duration of a project depends on its scope and complexity. On average, web
+                                        development projects at HibaLogics take 4 to 6 weeks, while mobile app
+                                        development may take a bit longer. We always strive to deliver high-quality
+                                        solutions within an agreed timeline and will provide you with an estimated
+                                        timeline at the start of the project.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </section>
+
         <!-- footer -->
         <footer class="bg-secondaryblk">
             <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-14">
-                <div class=" grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4 lg:mb-12 ">
+                <div class=" grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4 lg:mb-12 ">
                     <!-- left Section -->
-                    <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="1000">
+                    <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="800">
                         <span class="inline-block bg-slate-700 text-white font-medium py-2 px-3 rounded-full text-xs">
                             Services
                         </span>

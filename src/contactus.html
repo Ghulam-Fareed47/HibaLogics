@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/logo-fav/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/aos-master/dist/aos.css">
+    <link href="./output.css" rel="stylesheet">
+    <title>Contact Us</title>
+</head>
+
+
+<body class="scroll-py-16">
+    <main class="font-sanssrf bg-[url('assets/images/home/background.svg')]  bg-repeat ">
+        <!-- HEADER -->
+        <header class="fixed top-0 z-20 w-full bg-sky-50">
+            <!-- Navbar Section -->
+            <nav class="w-full z-10 nav " id="navbar">
+                <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-5 flex justify-between items-center"
+                    id="nav-content">
+                    <!-- Logo Section -->
+                    <div>
+                        <!-- Default Logo -->
+                        <a href="#">
+                            <img id="logo" src="assets/images/logo-fav/logo.svg" alt="Logo" class="w-36 md:w-44">
+                        </a>
+                    </div>
+
+                    <!-- Navigation Links Section -->
+                    <div class="flex items-center gap-7" id="nav-links">
+                        <!-- Portfolio Link -->
+                        <a href="#portfolioo" id="portfolio-link" onclick="setActive('portfolio-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
+                            Portfolio
+                        </a>
+                        <!-- Services Link -->
+                        <a href="#servicess" id="services-link" onclick="setActive('services-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
+                            Services
+                        </a>
+                        <!-- Testimonials Link -->
+                        <a href="#testimonialss" id="testimonials-link" onclick="setActive('testimonials-link')"
+                            class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
+                            Testimonials
+                        </a>
+
+                        <!-- Let's Talk Button -->
+                        <a href="#"
+                            class="text-white bg-secondary py-3 px-8 rounded-full text-lg hover:bg-primary duration-500 hidden lg:block">
+                            <span class="flex items-center">
+                                <img src="assets/images/home/button-arrow.svg" alt="Button Arrow" class="w-3 mr-3 pt-2">
+                                Let's Talk
+                            </span>
+                        </a>
+
+                        <!-- Mobile Menu Button -->
+                        <button id="hamburgerButton"
+                            class="callusdrop group ml-4 lg:hidden inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded transition"
+                            aria-pressed="false" onclick="toggleMenu(this)">
+                            <span class="sr-only">Menu</span>
+                            <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect
+                                    class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-500 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                                <rect
+                                    class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
+                                    y="7" width="16" height="2" rx="1"></rect>
+                                <rect
+                                    class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
+                                    y="7" width="9" height="2" rx="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </nav>
+
+            <!-- Mobile DropDown -->
+            <div id="contactContainer"
+                class=" space-y-4 lg:hidden w-full sm:w-[50vw] bg-secondaryblk px-5 h-[100vh] -translate-x-[120%]  absolute top-0 left-0 transform transition-transform duration-500 ease-out py-14 z-20 ">
+                <div class="relative">
+                    <button class="callusdrop close-menu-btn">
+                        <i
+                            class="fa-regular fa-circle-xmark text-2xl text-secondary  absolute -top-8 right-0 hover:text-primary duration-300"></i>
+                    </button>
+                    <!-- Navigation Links Section -->
+                    <div class="flex flex-col items-start gap-10" id="nav-link">
+                        <!-- Portfolio Link (Initially Active) -->
+                        <a href="#portfolioo" id="sidebar-portfolio" onclick="setSidebarActive('sidebar-portfolio')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base  ">
+                            Portfolio
+                        </a>
+                        <!-- Services Link -->
+                        <a href="#servicess" id="sidebar-services" onclick="setSidebarActive('sidebar-services')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base ">
+                            Services
+                        </a>
+                        <!-- Testimonials Link -->
+                        <a href="#testimonialss" id="sidebar-testimonials"
+                            onclick="setSidebarActive('sidebar-testimonials')"
+                            class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base ">
+                            Testimonials
+                        </a>
+                        <!-- Let's Talk Button -->
+                        <a href="#"
+                            class="text-white bg-secondary py-3 px-7 rounded-full text-sm hover:bg-primary duration-500 ">
+                            <span class="flex items-center">
+                                <img src="assets/images/home/button-arrow.svg" alt="Button Arrow" class="w-3 mr-3 pt-2">
+                                Let's Talk
+                            </span>
+                        </a>
+                        <div class="space-y-5">
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                                <img src="assets/images/home/whatsapp.svg" alt="Whatsapp">+92 344 8408098
+                            </a>
+                            <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                                <img src="assets/images/home/paper-plane.svg" alt="Paper-plane">hello@hibalogics.com
+                            </a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Follow Us on :</h1>
+                                <a href="#inquire" class="hover:scale-125 duration-300"> <img
+                                        src="assets/images/home/facebook.svg" alt="Facebook"></a>
+                                <a href="#inquire" class="hover:scale-125 duration-300"><img
+                                        src="assets/images/home/linkedin.svg" alt="linkdin"></a>
+
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-gray-100 mr-2">Hire Us on :</h1>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- HERO -->
+        <!-- Section1 -->
+        <section class="pt-16">
+            <!-- Overlay -->
+
+            <div
+                class="h-80 bg-sky-50 inset-0 flex flex-col justify-center items-center text-center  px-4 lg:px-7 xl:px-10 ">
+                <!-- Heading -->
+                <div>
+                    <h2
+                        class="text-secondaryblk text-3xl font-semibold sm:text-4xl md:text-4xl lg:text-6xl font- mb-4 font-teko">
+                        Contact
+                    </h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- section2 Contact Form section-->
+
+        <section data-aos="fade-up" data-aos-duration="1000">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-16 lg:py-24">
+                <div class="flex flex-col-reverse lg:flex-row lg:space-x-12 mb-4 lg:mt-8">
+                    <!-- Left Section -->
+                    <div class="lg:w-2/4 space-y-4 pr-8 pt-8 pb-8 mt-6" data-aos="fade-up" data-aos-duration="800">
+                        <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+                        <div class="pt-2">
+                            <p class="mb-3 ">
+                                We'd love to hear from you! Whether you have a project
+                                in mind, need design advice, or just want to say hello,
+                                our team is here to help. Fill out the form below, and
+                                we'll get back to you as soon as possible.
+                            </p>
+                            <p class="mb-3 font-medium flex items-start">
+                                <strong>
+                                    <i class="fa-solid fa-location-dot mr-2 text-secondary"></i>
+                                </strong>
+                                <span class="flex-1">
+                                    Near Govt High School, Kashmir Town, Narowal,
+                                </span>
+                            </p>
+                            <p class="mb-3 font-medium">
+                                <strong><i class="fa-solid fa-phone mr-1  text-secondary"></i></strong>
+                                +92 344 8408098
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Section -->
+                    <div class="lg:w-2/3" data-aos="fade-up" data-aos-duration="1000">
+                        <form
+                            class="space-y-6 bg-sky-50 px-8 md:px-10 pb-8 md:pb-10 pt-4 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
+                            <!-- Name and Email -->
+                            <div class="flex flex-col md:flex-row md:space-x-6 gap-6">
+                                <div class="flex-1">
+                                    <input type="text" id="name"
+                                        class="w-full bg-transparent text-secondaryblk border-b border-secondaryblk focus:outline-none py-4 md:py-6 placeholder-gray-500"
+                                        placeholder="Enter Your First name" />
+                                </div>
+                                <div class="flex-1">
+                                    <input type="email" id="email"
+                                        class="w-full bg-transparent text-secondaryblk border-b border-secondaryblk focus:outline-none py-4 md:py-6 placeholder-gray-500"
+                                        placeholder="Enter Your Last name" />
+                                </div>
+                            </div>
+                            <!-- Where Did You Hear -->
+                            <div>
+                                <input type="text" id="source"
+                                    class="w-full bg-transparent text-secondaryblk border-b border-secondaryblk focus:outline-none py-4 md:py-6 placeholder-gray-500"
+                                    placeholder="Phone Number" />
+                            </div>
+                            <!-- Project/Idea -->
+                            <div>
+                                <textarea id="project" rows="2"
+                                    class="w-full bg-transparent text-secondaryblk border-b border-secondaryblk focus:outline-none pt-4 md:pt-6 placeholder-gray-500"
+                                    placeholder="Write the Message"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex pt-4 md:pt-6">
+                                <a href="#inquire"
+                                    class="text-white font-medium bg-secondary py-2.5 px-5 rounded-lg hover:bg-primary  duration-500 shadow-md">
+                                    Send Message
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="1000">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-16 lg:py-24">
+                <div>
+                    <div
+                        class="grid lg:grid-cols-2 items-center gap-16 p-8 mx-auto  bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
+                        <div>
+                            <h1 class="text-3xl font-extrabold">Let's Talk</h1>
+                            <p class="text-sm text-gray-400 mt-3">Have some big idea or brand to develop and need help?
+                                Then reach out we'd love to hear about your project and provide help.</p>
+                            <div class="mt-12">
+                                <h2 class="text-lg font-extrabold">Phone :</h2>
+                                <ul class="mt-3">
+                                    <li class="flex items-center">
+                                        <div
+                                            class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                                            <i class="fad fa-phone text-primary text-xl"></i>
+                                        </div>
+                                        <div class="text-secondaryblk ml-3">
+                                            <strong>+92 344 8408098</strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-12">
+                                <h2 class="text-lg font-extrabold">Socials :</h2>
+                                <ul class="flex mt-3 space-x-4">
+                                    <li
+                                        class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                                        <a href="#inquire" class="hover:scale-125 ml-1 duration-300"> <img
+                                                src="assets/images/home/facebook.svg" alt="Facebook"
+                                                class="h-10 w-10"></a>
+                                    </li>
+                                    <li
+                                        class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                                        <a href="#inquire" class="hover:scale-125 duration-300"><img
+                                                src="assets/images/home/linkedin.svg" alt="linkdin" class="h-8 w-8"></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form class="ml-auo space-y-4">
+                            <input type='text' placeholder='Name'
+                                class="w-full rounded-md py-2.5 px-4 border text-sm outline-secondary" />
+                            <input type='email' placeholder='Email'
+                                class="w-full rounded-md py-2.5 px-4 border text-sm outline-secondary" />
+                            <input type='text' placeholder='Subject'
+                                class="w-full rounded-md py-2.5 px-4 border text-sm outline-secondary" />
+                            <textarea placeholder='Message' rows="6"
+                                class="w-full rounded-md px-4 border text-sm pt-2.5 outline-secondary"></textarea>
+                            <button type='button'
+                                class="text-white bg-secondary hover:bg-primary duration-300 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Send</button>
+                        </form>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- footer -->
+        <footer class="bg-secondaryblk">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-14">
+                <div class=" grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4 lg:mb-12 ">
+                    <!-- left Section -->
+                    <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="800">
+                        <span class="inline-block bg-slate-700 text-white font-medium py-2 px-3 rounded-full text-xs">
+                            Services
+                        </span>
+                        <h2 class="text-2xl xl:text-[28px] font-semibold text-gray-100 leading-relaxed">
+                            Connect With Us - Let's Start a Conversation about Your Ideas
+                            and Goals
+                        </h2>
+
+                    </div>
+
+                    <!-- Right Section -->
+                    <div class="lg:col-span-2 lg:ml-12" data-aos="fade-up" data-aos-duration="1000">
+                        <form class="space-y-6">
+                            <!-- Name and Email -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <input type="text" id="name"
+                                        class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
+                                        placeholder="Your Name" />
+                                </div>
+                                <div>
+                                    <input type="email" id="email"
+                                        class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
+                                        placeholder="Your Email" />
+                                </div>
+                            </div>
+
+                            <!-- Project/Idea -->
+                            <div>
+                                <textarea id="project" rows="2"
+                                    class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none pt-6 placeholder-gray-100"
+                                    placeholder="Tell us about your project/idea"></textarea>
+                            </div>
+
+                            <!-- Where Did You Hear -->
+                            <div>
+                                <input type="text" id="source"
+                                    class="w-full bg-transparent text-gray-100 border-b border-gray-100 focus:outline-none py-8 placeholder-gray-100"
+                                    placeholder="Where did you hear about us?" />
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex pt-6">
+                                <a href="#inquire"
+                                    class="text-secondaryblk bg-white py-2 px-6 rounded-full text-lg hover:bg-slate-200 duration-500 shadow-md">
+                                    <span class="flex items-center ">
+                                        <img src="assets/images/home/btnblack-arrow.svg" alt="Button black Arrow"
+                                            class="w-3 mr-3 pt-2">
+                                        Submit
+                                    </span>
+                                </a>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row items-start md:items-center gap-4 justify-between border-b border-dashed py-7">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+                        <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                            <img src="assets/images/home/whatsapp.svg" alt="Whatsapp">+92 344 8408098
+                        </a>
+                        <a href="#inquire" class="flex text-gray-100 items-center gap-2">
+                            <img src="assets/images/home/paper-plane.svg" alt="Paper-plane">hello@hibalogics.com
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-gray-100 mr-2">Follow Us on :</h1>
+                        <a href="#inquire" class="hover:scale-125 duration-300"> <img
+                                src="assets/images/home/facebook.svg" alt="Facebook"></a>
+                        <a href="#inquire" class="hover:scale-125 duration-300"><img
+                                src="assets/images/home/linkedin.svg" alt="linkdin"></a>
+
+
+                    </div>
+                </div>
+                <div class="text-gray-100 text-lg md:text-xl font-medium mt-7">Copyright © 2023 Hibalogics.</div>
+
+            </div>
+
+
+        </footer>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/aos-master/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+    </script>
+</body>
+
+</html>
