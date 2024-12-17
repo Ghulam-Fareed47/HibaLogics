@@ -23,7 +23,7 @@
         <header class="fixed top-0 z-20 w-full">
             <!-- Navbar Section -->
             <nav class="w-full z-10 nav " id="navbar">
-                <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-5 flex justify-between items-center"
+                <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-3 md:py-5 flex justify-between items-center"
                     id="nav-content">
                     <!-- Logo Section -->
                     <div>
@@ -50,7 +50,7 @@
                             class="nav-link relative hover:text-primary duration-500 text-base hidden lg:block">
                             Testimonials
                         </a>
-                    
+
                         <!-- Let's Talk Button -->
                         <a href="#"
                             class="text-white bg-secondary py-3 px-8 rounded-full text-lg hover:bg-primary duration-500 hidden lg:block">
@@ -59,28 +59,33 @@
                                 Let's Talk
                             </span>
                         </a>
-                    
+
                         <!-- Mobile Menu Button -->
-                        <button id="hamburgerButton" class="callusdrop group ml-4 lg:hidden inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded transition"
+                        <button id="hamburgerButton"
+                            class="callusdrop group ml-4 lg:hidden inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded transition"
                             aria-pressed="false" onclick="toggleMenu(this)">
                             <span class="sr-only">Menu</span>
-                            <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-500 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+                            <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect
+                                    class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-500 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
                                     y="7" width="9" height="2" rx="1"></rect>
-                                <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
+                                <rect
+                                    class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
                                     y="7" width="16" height="2" rx="1"></rect>
-                                <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
+                                <rect
+                                    class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
                                     y="7" width="9" height="2" rx="1"></rect>
                             </svg>
                         </button>
                     </div>
-                    
+
                 </div>
             </nav>
 
             <!-- Mobile DropDown -->
             <div id="contactContainer"
-                class=" space-y-4 lg:hidden w-full sm:w-[50vw] bg-secondaryblk px-5 h-[100vh] -translate-x-[120%]  absolute top-0 left-0 transform transition-transform duration-500 ease-out py-14 z-20 " >
+                class=" space-y-4 lg:hidden w-full sm:w-[50vw] bg-secondaryblk px-5 h-[100vh] -translate-x-[120%]  absolute top-0 left-0 transform transition-transform duration-500 ease-out py-14 z-50 ">
                 <div class="relative">
                     <button class="callusdrop close-menu-btn">
                         <i
@@ -99,7 +104,8 @@
                             Services
                         </a>
                         <!-- Testimonials Link -->
-                        <a href="#testimonialss" id="sidebar-testimonials" onclick="setSidebarActive('sidebar-testimonials')"
+                        <a href="#testimonialss" id="sidebar-testimonials"
+                            onclick="setSidebarActive('sidebar-testimonials')"
                             class="callusdrop close-menu-btn sidebar-link text-white relative hover:text-primary duration-500 text-base ">
                             Testimonials
                         </a>
@@ -128,27 +134,23 @@
                                         src="assets/images/home/linkedin.svg" alt="linkdin"></a>
 
                             </div>
-                            <div class="flex items-center gap-2">
-                                <h1 class="text-gray-100 mr-2">Hire Us on :</h1>
-
-
-                            </div>
+                        
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
 
-        <!-- Button For Top-To-Scroll -->
-        <button id="scrollToTop" 
-        class="fixed z-50 bottom-8 right-8 w-14 h-14 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce focus:outline-none hover:bg-primary duration-300">
-        <i class="fa-solid fa-chevron-up text-lg"></i>
-    </button>
+            <!-- Button For Top-To-Scroll -->
+            <button id="scrollToTop"
+                class="fixed hidden z-30 bottom-8 right-8 w-14 h-14 bg-secondary text-white rounded-2xl  items-center justify-center shadow-lg animate-bounce focus:outline-none hover:bg-primary duration-300">
+                <i class="fa-solid fa-chevron-up text-lg"></i>
+            </button>
+        </header>
 
         <!-- HERO -->
         <!-- section1 Landing page-->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-32 lg:pt-56">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-36 lg:pt-56">
                 <div class="flex flex-col justify-center items-start lg:items-center lg:text-center gap-4 lg:gap-7">
                     <h1 class=" text-4xl lg:text-6xl text-secondary font-bold ">Web Design & Development</h1>
                     <h1 class="text-4xl lg:text-6xl font-bold text-secondaryblk">services that drive results</h1>
@@ -175,7 +177,7 @@
         <!-- section2 Services section-->
         <section data-aos="fade-up" data-aos-duration="1500">
             <div id="servicess"
-                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-16 lg:pt-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
                 <!-- left Section -->
                 <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -481,7 +483,7 @@
 
         <!-- section3 Portfolio section-->
         <section data-aos="fade-up" data-aos-duration="1500">
-            <div id="portfolioo" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
+            <div id="portfolioo" class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-16 lg:pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -631,7 +633,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                  
+
                     <div class="rounded-xl  lg:mt-14" data-aos="fade-up" data-aos-duration="1000">
                         <div>
                             <img src="assets/images/home/studio.png" alt="Studio SPA"
@@ -690,7 +692,7 @@
 
         <!-- section4 Testimonials section-->
         <section id="testimonialss" data-aos="fade-up" data-aos-duration="1500">
-            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-24">
+            <div class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 pt-16 lg:pt-24">
                 <!-- Heading Section -->
                 <div class="md:col-span-1 space-y-4 mb-16" data-aos="fade-up" data-aos-duration="1000">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -805,7 +807,7 @@
         <!-- section5 FAQs section-->
         <section data-aos="fade-up" data-aos-duration="1000">
             <div id="FAQs"
-                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
+                class="container mx-auto px-4 sm:px-10 lg:px-20 2xl:px-12 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-3 gap-12 ">
                 <!-- left Section -->
                 <div class="lg:col-span-1 space-y-4 " data-aos="fade-up" data-aos-duration="800">
                     <span class="inline-block bg-blue-100 text-secondaryblk font-medium py-2 px-3 rounded-full text-xs">
@@ -991,7 +993,7 @@
 
                     </div>
                 </div>
-                <div class="text-gray-100 text-lg md:text-xl font-medium mt-7">Copyright © 2023 Hibalogics.</div>
+                <div class="text-gray-100 text-lg md:text-xl font-medium mt-7">Copyright © 2024 Hibalogics.</div>
 
             </div>
 
